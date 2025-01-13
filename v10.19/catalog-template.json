@@ -1,0 +1,9 @@
+{
+    "schema": "olm.template.basic",
+    "entries": [
+        {
+            "schema": "olm.bundle",
+            "image": "quay.io/redhat-user-workloads/windows-machine-conf-tenant/windows-machine-config-operator/windows-machine-config-operator-bundle-master@sha256:05874e1c543ac1b90b56a440c75cfdb16075d229b729b6967f92b282d3018e32"
+        }
+    ]
+}

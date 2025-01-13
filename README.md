@@ -1,4 +1,29 @@
-## Adding a new stream
+# Windows Machine Config Operator FBC
+
+FBC for the [Windows Machine Config Operator](https://github.com/openshift/windows-machine-config-operator)
+
+The [olm-sample](https://github.com/konflux-ci/olm-operator-konflux-sample/blob/main/docs/konflux-onboarding.md) should be used as a source of truth, over the information here.
+
+## Adding a stream
+
+### Adding a new stream
+
+```
+# Copy an existing directory
+cp -r windows-machine-config-operator/release-4.15/ windows-machine-config-operator/new-stream
+
+# Replace references to old OCP version with new
+...
+
+# Generate catalog using a recent bundle build
+opm render quay.io/redhat-user-workloads/windows-machine-conf-tenant/windows-machine-config-operator/windows-machine-config-operator-bundle-<$release>@<$DIGEST> --migrate-level=bundle-object-to-csv-metadata >catalog.json
+# Convert the catalog to a basic template
+opm alpha convert-template basic catalog.json >catalog-template.json
+
+# Both the catalog and the template should be committed to source
+```
+
+### Adding a stream from an older catalog source (migrating to konflux)
 
 ```
 # Adding 4.17 as an example
@@ -13,6 +38,8 @@ opm migrate registry.redhat.io/redhat/redhat-operator-index:v4.17 ./catalog-migr
 
 # Copy the WMCO catalog
 cp catalog-migrate/windows-machine-config-operator/catalog.json windows-machine-config-operator/release-4.17/catalog/catalog.json
+# Convert the catalog to a basic template
+opm alpha convert-template basic catalog.json >catalog-template.json
 
+# Both the catalog and the template should be committed to source
 ```
-
