@@ -8,9 +8,8 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" && ( "windows-machine-config-operator/master/***".pathChanged() ||
-      ".tekton/windows-machine-config-operator-fbc-master-pull-request.yaml".pathChanged()
-      || "Dockerfile".pathChanged() )
+      == "main" && ( "v10.19/***".pathChanged() || ".tekton/windows-machine-config-operator-fbc-master-pull-request.yaml".pathChanged()
+      )
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: windows-machine-config-operator-fbc-master
@@ -32,9 +31,9 @@ spec:
     value:
     - linux/x86_64
   - name: dockerfile
-    value: Dockerfile
+    value: Containerfile
   - name: path-context
-    value: windows-machine-config-operator/master
+    value: v10.19
   pipelineSpec:
     description: |
       This pipeline is ideal for building and verifying [file-based catalogs](https://konflux-ci.dev/docs/advanced-how-tos/building-olm.adoc#building-the-file-based-catalog).
