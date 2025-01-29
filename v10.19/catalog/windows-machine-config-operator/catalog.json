@@ -21,7 +21,7 @@
     "schema": "olm.bundle",
     "name": "windows-machine-config-operator.v10.19.0",
     "package": "windows-machine-config-operator",
-    "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:febe347beb4096fd1c1f123eba7d6493850767a5b542aa6f14534d0524b20d69",
+    "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:7eee4f9d0e2c1ce22cff5321331993daf3b1e3cda2017fb14b372cafc3892f3c",
     "properties": [
         {
             "type": "olm.package",
@@ -101,11 +101,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:febe347beb4096fd1c1f123eba7d6493850767a5b542aa6f14534d0524b20d69"
+            "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:7eee4f9d0e2c1ce22cff5321331993daf3b1e3cda2017fb14b372cafc3892f3c"
         },
         {
             "name": "",
-            "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:ead54083e6820683668a010e48bc66d83379b14fd4da94a05c224926b5fad22c"
+            "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:922e97a44ae3ecf248b63bb67c3d82d1fc57fe9a6af881d6840a44619e0210c7"
         }
     ]
 }
