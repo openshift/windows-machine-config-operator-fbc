@@ -22,7 +22,7 @@
         },
         {
             "schema": "olm.bundle",
-            "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:febe347beb4096fd1c1f123eba7d6493850767a5b542aa6f14534d0524b20d69"
+            "image": "registry.stage.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:7eee4f9d0e2c1ce22cff5321331993daf3b1e3cda2017fb14b372cafc3892f3c"
         }
     ]
 }
