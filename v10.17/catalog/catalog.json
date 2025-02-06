@@ -77,20 +77,20 @@
                 "displayName": "Windows Machine Config Operator",
                 "installModes": [
                     {
-                        "supported": true,
-                        "type": "OwnNamespace"
+                        "type": "OwnNamespace",
+                        "supported": true
                     },
                     {
-                        "supported": false,
-                        "type": "SingleNamespace"
+                        "type": "SingleNamespace",
+                        "supported": false
                     },
                     {
-                        "supported": false,
-                        "type": "MultiNamespace"
+                        "type": "MultiNamespace",
+                        "supported": false
                     },
                     {
-                        "supported": false,
-                        "type": "AllNamespaces"
+                        "type": "AllNamespaces",
+                        "supported": false
                     }
                 ],
                 "keywords": [
@@ -98,8 +98,8 @@
                 ],
                 "maintainers": [
                     {
-                        "email": "team-winc@redhat.com",
-                        "name": "Red Hat, Windows Container Support for OpenShift"
+                        "name": "Red Hat, Windows Container Support for OpenShift",
+                        "email": "team-winc@redhat.com"
                     }
                 ],
                 "maturity": "stable",
