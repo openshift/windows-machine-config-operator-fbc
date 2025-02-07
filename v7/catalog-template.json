@@ -1,0 +1,206 @@
+{
+    "schema": "olm.template.basic",
+    "entries": [
+        {
+            "defaultChannel": "stable",
+            "icon": {
+                "base64data": "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",
+                "mediatype": "image/png"
+            },
+            "name": "windows-machine-config-operator",
+            "schema": "olm.package"
+        },
+        {
+            "entries": [
+                {
+                    "name": "windows-machine-config-operator.v7.0.0",
+                    "skipRange": ">=6.0.0 <7.0.0"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.0.1",
+                    "replaces": "windows-machine-config-operator.v7.0.0",
+                    "skipRange": ">=6.0.0 <7.0.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.0",
+                    "replaces": "windows-machine-config-operator.v7.0.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.1-0.1696813823.p"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.1-0.1697679560.p",
+                    "replaces": "windows-machine-config-operator.v7.1.0",
+                    "skips": [
+                        "windows-machine-config-operator.v7.1.1-0.1696813823.p",
+                        "windows-machine-config-operator.v7.1.1"
+                    ]
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.0",
+                    "replaces": "windows-machine-config-operator.v7.1.1-0.1697679560.p"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1715099478.p",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1716899298.p",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1717627428.p",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1720400802.p",
+                    "replaces": "windows-machine-config-operator.v7.2.0",
+                    "skipRange": ">=6.0.0 <7.2.1",
+                    "skips": [
+                        "windows-machine-config-operator.v7.2.1-0.1717627428.p",
+                        "windows-machine-config-operator.v7.2.1-0.1716899298.p",
+                        "windows-machine-config-operator.v7.2.1-0.1715099478.p",
+                        "windows-machine-config-operator.v7.2.1"
+                    ]
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.2",
+                    "replaces": "windows-machine-config-operator.v7.2.1-0.1720400802.p",
+                    "skipRange": ">=6.0.0 <7.2.2"
+                }
+            ],
+            "name": "preview",
+            "package": "windows-machine-config-operator",
+            "schema": "olm.channel"
+        },
+        {
+            "entries": [
+                {
+                    "name": "windows-machine-config-operator.v7.0.0",
+                    "skipRange": ">=6.0.0 <7.0.0"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.0.1",
+                    "replaces": "windows-machine-config-operator.v7.0.0",
+                    "skipRange": ">=6.0.0 <7.0.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.0",
+                    "replaces": "windows-machine-config-operator.v7.0.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.1-0.1696813823.p"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.1.1-0.1697679560.p",
+                    "replaces": "windows-machine-config-operator.v7.1.0",
+                    "skips": [
+                        "windows-machine-config-operator.v7.1.1-0.1696813823.p",
+                        "windows-machine-config-operator.v7.1.1"
+                    ]
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.0",
+                    "replaces": "windows-machine-config-operator.v7.1.1-0.1697679560.p"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1715099478.p",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1716899298.p",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1717627428.p",
+                    "skipRange": ">=6.0.0 <7.2.1"
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.1-0.1720400802.p",
+                    "replaces": "windows-machine-config-operator.v7.2.0",
+                    "skipRange": ">=6.0.0 <7.2.1",
+                    "skips": [
+                        "windows-machine-config-operator.v7.2.1-0.1717627428.p",
+                        "windows-machine-config-operator.v7.2.1-0.1716899298.p",
+                        "windows-machine-config-operator.v7.2.1-0.1715099478.p",
+                        "windows-machine-config-operator.v7.2.1"
+                    ]
+                },
+                {
+                    "name": "windows-machine-config-operator.v7.2.2",
+                    "replaces": "windows-machine-config-operator.v7.2.1-0.1720400802.p",
+                    "skipRange": ">=6.0.0 <7.2.2"
+                }
+            ],
+            "name": "stable",
+            "package": "windows-machine-config-operator",
+            "schema": "olm.channel"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:d46ef80b2e76c8bafb73eac0179bc8e192874dcefba5248666850817d5c14f52"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:9dd4eefcee4b964918cf032b6c71aeae93301eeb0aff272e0a55113e90336cb1"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:5623b1b97c1423e31ba92d1fcf5bc73a90d7a08a08c941b883c139035deeb7c5"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:4c7a13c2c4e3bd3bf1827cd2182ac5c20587e4f214c62c7ff08cc3067433229f"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:148c4b2fb9ebdf18262c932ef8eb91599a2ac535b6f9a420bf068cad43704af1"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:70a9d81100d0556c281e498c31b92cee9582729c9753562909a79bf27ed8b0d5"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:9222ad35752330af411dd263087e7a95af7aff328b3aba12698feec6e4389a10"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:43b7e7660331dcb90c40a0892c6291282239f1af55a7a83ad3c6287e342273be"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:3097b0e9d6214e5078725ef4587984e6510702f2479a2adbeb0b5b513be5b111"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:71a422c1cec613f7662d7d750762781896973f5741be315906cb073e301400e0"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:259f7ff9c94b28f8546831f49ed67a0a4bb94d8c18e5909c542afe5896298e76"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:1a6321ac8560dddba7df296f33531c30ecd1336dc21ae2e43d8bef95a30b8ecf"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:8e40429a22fb9e9c4ab7a43fb7a19673a271c898cd0a382ab5f8d044a2c37fe6"
+        }
+    ]
+}
