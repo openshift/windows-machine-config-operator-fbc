@@ -13,7 +13,8 @@
         {
             "entries": [
                 {
-                    "name": "windows-machine-config-operator.v10.19.0"
+                    "name": "windows-machine-config-operator.v10.19.0",
+                    "skipRange": ">=10.18.0 <10.19.0"
                 }
             ],
             "name": "stable",
