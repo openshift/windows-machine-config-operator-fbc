@@ -47,8 +47,8 @@ opm alpha convert-template basic catalog.json >catalog-template.json
 ## Updating a patch version before release
 
 ```
-# first update the bundle digest in the catalog-template for the stream with your editor of choice
-$editor v10.19/catalog-template.json
+# Update the bundle digest in the catalog-template for the stream with your editor of choice.
+nvim v10.19/catalog-template.json
 # generate a new catalog
 cd opm alpha render-template basic v10.19/catalog-template.json --migrate-level=bundle-object-to-csv-metadata  > v10.19/catalog/windows-machine-config-operator/catalog.json
 ```
