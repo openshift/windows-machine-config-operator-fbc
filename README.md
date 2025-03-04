@@ -4,9 +4,9 @@ FBC for the [Windows Machine Config Operator](https://github.com/openshift/windo
 
 The [olm-sample](https://github.com/konflux-ci/olm-operator-konflux-sample/blob/main/docs/konflux-onboarding.md) should be used as a source of truth, over the information here.
 
-## Adding a stream
+## Adding a release stream
 
-### Adding a new stream
+### Adding a new release stream
 
 ```
 # Copy an existing directory
@@ -23,7 +23,7 @@ opm alpha convert-template basic catalog.json >catalog-template.json
 # Both the catalog and the template should be committed to source
 ```
 
-### Adding a stream from an older catalog source (migrating to konflux)
+### Adding a release stream from an older catalog source (migrating to konflux)
 
 ```
 # Adding 4.17 as an example
@@ -42,4 +42,13 @@ cp catalog-migrate/windows-machine-config-operator/catalog.json windows-machine-
 opm alpha convert-template basic catalog.json >catalog-template.json
 
 # Both the catalog and the template should be committed to source
+```
+
+## Updating a patch version before release
+
+```
+# first update the bundle digest in the catalog-template for the stream with your editor of choice
+$editor v10.19/catalog-template.json
+# generate a new catalog
+cd opm alpha render-template basic v10.19/catalog-template.json --migrate-level=bundle-object-to-csv-metadata  > v10.19/catalog/windows-machine-config-operator/catalog.json
 ```
