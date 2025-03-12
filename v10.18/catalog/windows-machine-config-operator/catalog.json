@@ -22,7 +22,7 @@
     "schema": "olm.bundle",
     "name": "windows-machine-config-operator.v10.18.0",
     "package": "windows-machine-config-operator",
-    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:26f5e0a3593f5516a02cd1df19e9c4362b97c830213cc5ef47658a4d374bd740",
+    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:4c365cdc291de517f581b12694460ddfe288ce51452d7877fb5e764d17418489",
     "properties": [
         {
             "type": "olm.package",
@@ -39,13 +39,13 @@
                     "capabilities": "Seamless Upgrades",
                     "categories": "OpenShift Optional",
                     "certified": "false",
-                    "createdAt": "REPLACE_DATE",
+                    "createdAt": "2025-03-11T23:23:38Z",
                     "description": "An operator that enables Windows container workloads on OCP",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "true",
                     "features.operators.openshift.io/csi": "false",
                     "features.operators.openshift.io/disconnected": "true",
-                    "features.operators.openshift.io/fips-compliant": "false",
+                    "features.operators.openshift.io/fips-compliant": "true",
                     "features.operators.openshift.io/proxy-aware": "true",
                     "features.operators.openshift.io/tls-profiles": "false",
                     "features.operators.openshift.io/token-auth-aws": "false",
@@ -102,11 +102,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:de919a9ffcc009dcde9fa1efb48959f77d23999c56df2e448aa11c93db4d3598"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:8b254794428e35bf5c22dab35e25c3abcecb0cd1aed4af8d24d23c5427d73f29"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:26f5e0a3593f5516a02cd1df19e9c4362b97c830213cc5ef47658a4d374bd740"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:4c365cdc291de517f581b12694460ddfe288ce51452d7877fb5e764d17418489"
         }
     ]
 }
