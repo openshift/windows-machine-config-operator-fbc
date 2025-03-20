@@ -20,7 +20,9 @@ opm render quay.io/redhat-user-workloads/windows-machine-conf-tenant/windows-mac
 # Convert the catalog to a basic template
 opm alpha convert-template basic catalog.json >catalog-template.json
 
-# Both the catalog and the template should be committed to source
+# Ensure all references in catalog.json point to the same registry.
+# This should be registry.redhat.io for most streams and registry.stage.redhat.io for the stream tracked by the WMCO master branch
+# Both the catalog and the template should be committed to git
 ```
 
 ### Adding a release stream from an older catalog source (migrating to konflux)
@@ -49,6 +51,10 @@ opm alpha convert-template basic catalog.json >catalog-template.json
 ```
 # Update the bundle digest in the catalog-template for the stream with your editor of choice.
 nvim v10.19/catalog-template.json
-# generate a new catalog
-cd opm alpha render-template basic v10.19/catalog-template.json --migrate-level=bundle-object-to-csv-metadata  > v10.19/catalog/windows-machine-config-operator/catalog.json
+
+# Generate a new catalog
+opm alpha render-template basic v10.19/catalog-template.json --migrate-level=bundle-object-to-csv-metadata  > v10.19/catalog/windows-machine-config-operator/catalog.json; 
+
+# Ensure all references in catalog.json point to the same registry.
+# This should be registry.redhat.io for most streams and registry.stage.redhat.io for the stream tracked by the WMCO master branch
 ```
