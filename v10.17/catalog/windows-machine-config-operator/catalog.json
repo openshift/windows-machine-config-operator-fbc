@@ -26,6 +26,11 @@
         {
             "name": "windows-machine-config-operator.v10.17.0",
             "skipRange": ">=10.16.0 <10.17.0"
+        },
+        {
+            "name": "windows-machine-config-operator.v10.17.1",
+            "replaces": "windows-machine-config-operator.v10.17.0",
+            "skipRange": ">=10.16.0 <10.17.1"
         }
     ]
 }
@@ -118,6 +123,98 @@
         {
             "name": "manager",
             "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:e9a866c433aeedba0d47f2d1b5eb0c13dd8523f5cc623059cd289e679fce4372"
+        }
+    ]
+}
+{
+    "schema": "olm.bundle",
+    "name": "windows-machine-config-operator.v10.17.1",
+    "package": "windows-machine-config-operator",
+    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:6e7f55e935e7a0bbed5f138db613b33c4dd21faa50e9aa23e3103beb1ea0f466",
+    "properties": [
+        {
+            "type": "olm.package",
+            "value": {
+                "packageName": "windows-machine-config-operator",
+                "version": "10.17.1"
+            }
+        },
+        {
+            "type": "olm.csv.metadata",
+            "value": {
+                "annotations": {
+                    "alm-examples": "[]",
+                    "capabilities": "Seamless Upgrades",
+                    "categories": "OpenShift Optional",
+                    "certified": "false",
+                    "createdAt": "2025-05-06T22:24:59Z",
+                    "description": "An operator that enables Windows container workloads on OCP",
+                    "features.operators.openshift.io/cnf": "false",
+                    "features.operators.openshift.io/cni": "true",
+                    "features.operators.openshift.io/csi": "false",
+                    "features.operators.openshift.io/disconnected": "true",
+                    "features.operators.openshift.io/fips-compliant": "true",
+                    "features.operators.openshift.io/proxy-aware": "true",
+                    "features.operators.openshift.io/tls-profiles": "false",
+                    "features.operators.openshift.io/token-auth-aws": "false",
+                    "features.operators.openshift.io/token-auth-azure": "false",
+                    "features.operators.openshift.io/token-auth-gcp": "false",
+                    "olm.skipRange": ">=10.16.0 <10.17.1",
+                    "operatorframework.io/cluster-monitoring": "true",
+                    "operatorframework.io/suggested-namespace": "openshift-windows-machine-config-operator",
+                    "operators.openshift.io/valid-subscription": "[\"Red Hat OpenShift support for Windows Containers\"]",
+                    "operators.operatorframework.io/builder": "operator-sdk-v1.32.0+git",
+                    "operators.operatorframework.io/project_layout": "go.kubebuilder.io/v3",
+                    "repository": "https://github.com/openshift/windows-machine-config-operator",
+                    "support": "Red Hat"
+                },
+                "apiServiceDefinitions": {},
+                "crdDescriptions": {},
+                "description": "### Introduction\nThe Windows Machine Config Operator configures Windows Machines into nodes, enabling Windows container workloads to\nbe run on OCP clusters. Windows instances can be added either by creating a [MachineSet](https://docs.openshift.com/container-platform/4.17/machine_management/creating_machinesets/creating-machineset-aws.html#machine-api-overview_creating-machineset-aws),\nor by specifying existing instances through a [ConfigMap](https://docs.openshift.com/container-platform/4.17/windows_containers/byoh-windows-instance.html)\nThe operator completes all the necessary steps to configure the Windows instance so that it can join the cluster as a worker node.\n\nUsage of this operator requires an OpenShift Container Platform for Windows Containers subscription. Users looking to\ndeploy Windows containers workloads in production clusters should acquire a subscription before attempting to\ninstall this operator. Users without a subscription can try the community operator, a distribution which lacks\nofficial support.\n\n### Pre-requisites\n* A Red Hat OpenShift Container Platform for Windows Containers [subscription](https://access.redhat.com/support/policy/updates/openshift#windows)\n* OCP 4.17 cluster running on Azure, AWS, GCP or vSphere configured with hybrid OVN Kubernetes networking\n* [WMCO prerequisites](https://docs.openshift.com/container-platform/4.17/windows_containers/understanding-windows-container-workloads.html#wmco-prerequisites__understanding-windows-container-workloads)\n\n### Usage\nOnce the `openshift-windows-machine-config-operator` namespace has been created, a secret must be created containing\nthe private key that will be used to access the Windows VMs:\n```\n# Create secret containing the private key in the openshift-windows-machine-config-operator namespace\noc create secret generic cloud-private-key --from-file=private-key.pem=/path/to/key -n openshift-windows-machine-config-operator\n```\nWe strongly recommend not using the same\n[private key](https://docs.openshift.com/container-platform/4.17/installing/installing_azure/installing-azure-default.html#ssh-agent-using_installing-azure-default)\nused when installing the cluster\n\nBelow is an example of a vSphere Windows MachineSet which can create Windows Machines that the WMCO can react upon.\nPlease note that the windows-user-data secret will be created by the WMCO lazily when it is configuring the first\nWindows Machine. After that, the windows-user-data will be available for the subsequent MachineSets to be consumed.\nIt might take around 10 minutes for the Windows VM to be configured so that it joins the cluster. Please note that\nthe MachineSet should have following labels:\n* `machine.openshift.io/os-id: Windows`\n* `machine.openshift.io/cluster-api-machine-role: worker`\n* `machine.openshift.io/cluster-api-machine-type: worker`\n\nThe following label must be added to the Machine spec within the MachineSet spec:\n* `node-role.kubernetes.io/worker: \"\"`\n\nNot having these labels will result in the Windows node not being marked as a worker.\n\n`<infrastructureID>` should be replaced with the output of:\n```\noc get -o jsonpath='{.status.infrastructureName}{\"\\n\"}' infrastructure cluster\n```\n\nThe following template variables need to be replaced as follows with values from your vSphere environment:\n* `<Windows_VM_template>`: template name\n* `<VM Network Name>`: network name\n* `<vCenter DataCenter Name>`: datacenter name\n* `<Path to VM Folder in vCenter>`: path where your OpenShift cluster is running\n* `<vCenter Datastore Name>`: datastore name\n* `<vCenter Server FQDN/IP>`: IP address or FQDN of the vCenter server\n\nPlease note that on vSphere, Windows Machine names cannot be more than 15 characters long. The MachineSet name therefore\ncannot be more than 9 characters long, due to the way Machine names are generated from it.\n```\napiVersion: machine.openshift.io/v1beta1\nkind: MachineSet\nmetadata:\n  labels:\n    machine.openshift.io/cluster-api-cluster: <infrastructureID>\n  name: winworker\n  namespace: openshift-machine-api\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      machine.openshift.io/cluster-api-cluster: <infrastructureID>\n      machine.openshift.io/cluster-api-machineset: winworker\n  template:\n    metadata:\n      labels:\n        machine.openshift.io/cluster-api-cluster: <infrastructureID>\n        machine.openshift.io/cluster-api-machine-role: worker\n        machine.openshift.io/cluster-api-machine-type: worker\n        machine.openshift.io/cluster-api-machineset: winworker\n        machine.openshift.io/os-id: Windows\n    spec:\n      metadata:\n        labels:\n          node-role.kubernetes.io/worker: \"\"\n      providerSpec:\n        value:\n          apiVersion: vsphereprovider.openshift.io/v1beta1\n          credentialsSecret:\n            name: vsphere-cloud-credentials\n            namespace: openshift-machine-api\n          diskGiB: 128\n          kind: VSphereMachineProviderSpec\n          memoryMiB: 16384\n          metadata:\n            creationTimestamp: null\n          network:\n            devices:\n            - networkName: \"<VM Network Name>\"\n          numCPUs: 4\n          numCoresPerSocket: 1\n          snapshot: \"\"\n          template: <Windows_VM_template\n          userDataSecret:\n            name: windows-user-data\n          workspace:\n            datacenter: <vCenter DataCenter Name>\n            datastore: <vCenter Datastore Name>\n            folder: <Path to VM Folder in vCenter> # e.g. /DC/vm/ocp45-2tdrm\n            server: <vCenter Server FQDN/IP>\n```\nExample MachineSet for other cloud providers:\n- [AWS](https://docs.openshift.com/container-platform/4.17/windows_containers/creating_windows_machinesets/creating-windows-machineset-aws.html)\n- [Azure](https://docs.openshift.com/container-platform/4.17/windows_containers/creating_windows_machinesets/creating-windows-machineset-azure.html)\n- [GCP](https://docs.openshift.com/container-platform/4.17/windows_containers/creating_windows_machinesets/creating-windows-machineset-gcp.html)\n\n### Limitations\n#### DeploymentConfigs\nWindows Nodes do not support workloads created via DeploymentConfigs. Please use a normal Deployment, or other method to\ndeploy workloads.\n\n### Reporting issues\nSupport for this distribution of WMCO requires a Red Hat OpenShfit subscription. Support should be requested through the Red Hat Customer Portal.\nPlease read through the [troubleshooting document](https://docs.openshift.com/container-platform/4.17/support/troubleshooting/troubleshooting-windows-container-workload-issues.html)\nbefore opening a support case.",
+                "displayName": "Windows Machine Config Operator",
+                "installModes": [
+                    {
+                        "type": "OwnNamespace",
+                        "supported": true
+                    },
+                    {
+                        "type": "SingleNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "MultiNamespace",
+                        "supported": false
+                    },
+                    {
+                        "type": "AllNamespaces",
+                        "supported": false
+                    }
+                ],
+                "keywords": [
+                    "windows"
+                ],
+                "maintainers": [
+                    {
+                        "name": "Red Hat, Windows Container Support for OpenShift",
+                        "email": "team-winc@redhat.com"
+                    }
+                ],
+                "maturity": "stable",
+                "minKubeVersion": "1.30.0",
+                "provider": {
+                    "name": "Red Hat"
+                }
+            }
+        }
+    ],
+    "relatedImages": [
+        {
+            "name": "",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:60e2f86a5bf104abe76278e3541a799798a0569580269cd9ef71f5caad27b41f"
+        },
+        {
+            "name": "",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:6e7f55e935e7a0bbed5f138db613b33c4dd21faa50e9aa23e3103beb1ea0f466"
         }
     ]
 }
