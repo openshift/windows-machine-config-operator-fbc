@@ -1,3 +1,4 @@
+set -e
 for dir in v*/; do
   catalog="${dir}catalog/windows-machine-config-operator/catalog.json"
   images=$(cat $catalog | jq '. | select(.schema=="olm.bundle")| .relatedImages[].image')
@@ -7,5 +8,7 @@ for dir in v*/; do
     echo "please ensure the bundle and operator images are coming from the same registry"
     echo "found registries:"
     echo "$registries"
+    exit 1
   fi
 done
+echo no issues found
