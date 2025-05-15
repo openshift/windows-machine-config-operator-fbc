@@ -394,7 +394,8 @@ spec:
       optional: true
     - name: netrc
       optional: true
-  taskRunTemplate: {}
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-windows-machine-config-operator-fbc-master
   workspaces:
   - name: git-auth
     secret:
