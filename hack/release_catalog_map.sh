@@ -1,7 +1,6 @@
 declare -A release_catalog_map
 
 # This map is used to determine the catalog version based on the release branch
-release_catalog_map["master"]="v10.20"
 release_catalog_map["release-4.20"]="v10.20"
 release_catalog_map["release-4.19"]="v10.19"
 release_catalog_map["release-4.18"]="v10.18"
@@ -16,9 +15,10 @@ release_catalog_map["release-4.12"]="v7"
 # The the catalog version must correspond to the name of the directory containing the catalog-template.json file
 get_catalog() {
   local target_branch="$1"
-  catalog="${release_catalog_map[$target_branch]}"
-  if [[ -z "${catalog:-}" ]]; then
-    echo "Error: '$target_branch' is not a valid key in release_catalog_map"
+  if [[ -v release_catalog_map[$target_branch] ]]; then
+    catalog="${release_catalog_map[$target_branch]}"
+  else
+    echo "Error: '$target_branch' is not a valid key in release_catalog_map" >&2
     return 1
   fi
   echo "${catalog}"

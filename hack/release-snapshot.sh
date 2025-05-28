@@ -7,10 +7,10 @@ set -o pipefail
 # JSON file, and creating a new branch with the changes.
 #
 # Usage:
-#   ./hack/release-snapshot.sh [TARGET_BRANCH] [COMMIT_SHA]
+#   ./hack/release-snapshot.sh <TARGET_BRANCH> [COMMIT_SHA]
 #
 # Parameters:
-# - TARGET_BRANCH (optional): The target branch for the release. Defaults to `master` if not provided.
+# - TARGET_BRANCH (required): The target branch for the release.
 # - COMMIT_SHA (optional): The specific commit SHA to use for the snapshot. Defaults to `latest` if not provided.
 #
 # Prerequisites:
@@ -31,15 +31,20 @@ set -o pipefail
 # import the release catalog map script
 source hack/release_catalog_map.sh
 
+# use the first argument as the target branch
+TARGET_BRANCH=${1:-}
+if [[ -z ${TARGET_BRANCH} ]]; then
+  echo "Error: TARGET_BRANCH is required"
+  echo "Usage: ./hack/release_snapshot.sh <TARGET_BRANCH> [COMMIT_SHA]"
+  exit 1
+fi
+
 # check tenant project
 oc project windows-machine-conf-tenant || {
   echo "Error: Failed to switch to the windows-machine-conf-tenant project"
   echo "Ensure KUBECONFIG points to correct rhtap-releng tenant"
   exit 1
 }
-
-# use the first argument as the target branch, or default to master
-TARGET_BRANCH="${1:-master}"
 
 # get the catalog version based on the target branch
 CATALOG_TEMPLATE_PATH=$(get_catalog "${TARGET_BRANCH}")
