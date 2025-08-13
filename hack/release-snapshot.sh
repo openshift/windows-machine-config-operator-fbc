@@ -65,7 +65,7 @@ echo "Catalog template last olm.bundle image: ${IMAGE_VALUE}"
 # replace dots with dashes in the target branch name to create the name
 ORIGINAL_PRNAME="windows-machine-config-operator-bundle-${TARGET_BRANCH//./-}-on-push"
 echo ""
-echo "Snapshot name: ${ORIGINAL_PRNAME}"
+echo "Snapshot PR label: ${ORIGINAL_PRNAME}"
 
 # set the label filter to match the name
 LABEL_FILTER="pac.test.appstudio.openshift.io/original-prname=${ORIGINAL_PRNAME}"
@@ -89,6 +89,9 @@ if [[ -z "${SNAPSHOT_JSON}" ]]; then
   echo "Error: Finding snapshot for label filter: ${LABEL_FILTER}"
   exit 1
 fi
+
+SNAPSHOT_NAME=$(echo "${SNAPSHOT_JSON}" | jq -r '.metadata.name')
+echo "Snapshot used: ${SNAPSHOT_NAME}"
 
 COMMIT_SHA_TITLE=$(echo "${SNAPSHOT_JSON}" | jq -r '.metadata.annotations["pac.test.appstudio.openshift.io/sha-title"]')
 echo "Snapshot commit title: ${COMMIT_SHA_TITLE}"
@@ -161,6 +164,7 @@ git checkout -b "${BRANCH_NAME}"
 git add "${CATALOG_TEMPLATE_PATH}/"
 git commit -m "${TARGET_BRANCH}: release ${SHORT_COMMIT_SHA}" \
   -m "Updates ${CATALOG_TEMPLATE_PATH} olm.bundle image to ${WMCO_COMMIT_URL}${COMMIT_SHA}" \
+  -m "Snapshot used: ${SNAPSHOT_NAME}" \
   -m "This commit was generated using hack/release_snapshot.sh"
 
 echo ""
