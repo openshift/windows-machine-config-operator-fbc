@@ -1,6 +1,7 @@
 declare -A release_catalog_map
 
 # This map is used to determine the catalog version based on the release branch
+release_catalog_map["release-4.21"]="v10.21"
 release_catalog_map["release-4.20"]="v10.20"
 release_catalog_map["release-4.19"]="v10.19"
 release_catalog_map["release-4.18"]="v10.18"
