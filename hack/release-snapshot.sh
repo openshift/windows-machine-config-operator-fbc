@@ -156,6 +156,10 @@ opm alpha render-template \
     exit 1
   }
 
+# Replace registry.stage.redhat.io with registry.redhat.io in the catalog.json
+CATALOG_JSON_PATH="${CATALOG_TEMPLATE_PATH}/catalog/windows-machine-config-operator/catalog.json"
+sed -i 's/registry\.stage\.redhat\.io/registry.redhat.io/g' "${CATALOG_JSON_PATH}"
+
 # create a new branch, commit and push the changes
 WMCO_COMMIT_URL="https://github.com/openshift/windows-machine-config-operator/commit/"
 SHORT_COMMIT_SHA="${COMMIT_SHA:0:7}"
