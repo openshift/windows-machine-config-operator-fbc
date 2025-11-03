@@ -22,7 +22,7 @@
     "schema": "olm.bundle",
     "name": "windows-machine-config-operator.v10.21.0",
     "package": "windows-machine-config-operator",
-    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:63547675601b7669b430cd6a221a03d695415c81802c659131dd288ba4ece4a9",
+    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:d1c76f3035db86f9d5e7527021eff4b43a731b4042ad3f6109ef7168d2e4ae89",
     "properties": [
         {
             "type": "olm.package",
@@ -39,7 +39,7 @@
                     "capabilities": "Seamless Upgrades",
                     "categories": "OpenShift Optional",
                     "certified": "false",
-                    "createdAt": "2025-10-16T14:40:04Z",
+                    "createdAt": "2025-11-01T07:37:34Z",
                     "description": "An operator that enables Windows container workloads on OCP",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "true",
@@ -92,7 +92,7 @@
                     }
                 ],
                 "maturity": "stable",
-                "minKubeVersion": "1.33.0",
+                "minKubeVersion": "1.34.0",
                 "provider": {
                     "name": "Red Hat"
                 }
@@ -102,11 +102,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:1fffd13cdb3fb02de362f0ce51a7e4d0486c18b5f56954afb141d9b6267c9e71"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9991f49900de9faf9dcd7c697f2b59dd1490f1886605672de968f4bc3b02f28b"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:63547675601b7669b430cd6a221a03d695415c81802c659131dd288ba4ece4a9"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:d1c76f3035db86f9d5e7527021eff4b43a731b4042ad3f6109ef7168d2e4ae89"
         }
     ]
 }
