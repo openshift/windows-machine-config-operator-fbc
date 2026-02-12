@@ -1,8 +1,6 @@
 # The base image is expected to contain
 # /bin/opm (with a serve subcommand) and /bin/grpc_health_probe
-# TODO: This needs to be changed to 4.22 when the image is available.
-# https://issues.redhat.com/browse/WINC-1569
-FROM brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rhel9:v4.21
+FROM registry.redhat.io/openshift4/ose-operator-registry-rhel9:v4.22
 
 # Configure the entrypoint and command
 ENTRYPOINT ["/bin/opm"]
