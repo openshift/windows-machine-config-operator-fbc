@@ -7,7 +7,6 @@ release_catalog_map["release-4.20"]="v10.20"
 release_catalog_map["release-4.19"]="v10.19"
 release_catalog_map["release-4.18"]="v10.18"
 release_catalog_map["release-4.17"]="v10.17"
-release_catalog_map["release-4.16"]="v10.16"
 
 # This function retrieves the catalog version based on the target branch
 # The the catalog version must correspond to the name of the directory containing the catalog-template.json file
