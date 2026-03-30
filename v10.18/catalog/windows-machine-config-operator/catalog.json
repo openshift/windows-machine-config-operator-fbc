@@ -311,15 +311,15 @@
 }
 {
     "schema": "olm.bundle",
-    "name": "windows-machine-config-operator.v10.18.2",
+    "name": "windows-machine-config-operator.v10.18.3",
     "package": "windows-machine-config-operator",
-    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:dfa18709316dbf1a66e96515f0556f44b02e19acc576774c240ecb62dfac7900",
+    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:7550ed3ddb060ce7930b4ec6940f6bd04df96a3ba3b7d21d7a2d63d06562f139",
     "properties": [
         {
             "type": "olm.package",
             "value": {
                 "packageName": "windows-machine-config-operator",
-                "version": "10.18.2"
+                "version": "10.18.3"
             }
         },
         {
@@ -330,7 +330,7 @@
                     "capabilities": "Seamless Upgrades",
                     "categories": "OpenShift Optional",
                     "certified": "false",
-                    "createdAt": "2026-03-14T09:32:42Z",
+                    "createdAt": "2026-03-30T14:30:23Z",
                     "description": "An operator that enables Windows container workloads on OCP",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "true",
@@ -342,7 +342,7 @@
                     "features.operators.openshift.io/token-auth-aws": "false",
                     "features.operators.openshift.io/token-auth-azure": "false",
                     "features.operators.openshift.io/token-auth-gcp": "false",
-                    "olm.skipRange": ">=10.17.0 <10.18.2",
+                    "olm.skipRange": ">=10.17.0 <10.18.3",
                     "operatorframework.io/cluster-monitoring": "true",
                     "operatorframework.io/suggested-namespace": "openshift-windows-machine-config-operator",
                     "operators.openshift.io/valid-subscription": "[\"Red Hat OpenShift support for Windows Containers\"]",
@@ -393,11 +393,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:634a4114e740bdf545df8fddd85d58d682940c5792857b2c8ea634e49feee262"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:f5e36ad6b6ef9b0a291ecdf0f0fc431a0ea595db12a4d844ac6941212e9f88c1"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:dfa18709316dbf1a66e96515f0556f44b02e19acc576774c240ecb62dfac7900"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:7550ed3ddb060ce7930b4ec6940f6bd04df96a3ba3b7d21d7a2d63d06562f139"
         }
     ]
 }
