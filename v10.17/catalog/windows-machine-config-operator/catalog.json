@@ -227,7 +227,7 @@
     "schema": "olm.bundle",
     "name": "windows-machine-config-operator.v10.17.2",
     "package": "windows-machine-config-operator",
-    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:be3359833c37146b6056f15d947d679c88f08c188d0e090d553f0897d7b6e2b1",
+    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:398c4a7c5980c4192d6aae4a86d6cf44306ccf46ddf464b8f629a1a43ad11c73",
     "properties": [
         {
             "type": "olm.package",
@@ -244,7 +244,7 @@
                     "capabilities": "Seamless Upgrades",
                     "categories": "OpenShift Optional",
                     "certified": "false",
-                    "createdAt": "2026-03-28T11:49:51Z",
+                    "createdAt": "2026-04-13T22:07:55Z",
                     "description": "An operator that enables Windows container workloads on OCP",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "true",
@@ -307,11 +307,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9af8d9bd2f51a104432d345f7fca82b18ffacb3ea646f92bb4cbaaa62e7d4cf5"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:550499ae7889b009e7ed9ab6a8e977576138d5e7e48d4af57af7dd65e8b18b1a"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:be3359833c37146b6056f15d947d679c88f08c188d0e090d553f0897d7b6e2b1"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:398c4a7c5980c4192d6aae4a86d6cf44306ccf46ddf464b8f629a1a43ad11c73"
         }
     ]
 }
