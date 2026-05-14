@@ -142,8 +142,8 @@ echo "Updated olm.bundle image hash in ${CATALOG_TEMPLATE_PATH}/catalog-template
 
 # default migrate level to none
 MIGRATE_LEVEL="none"
-if [[ "${TARGET_BRANCH}" == "master"  || "${TARGET_BRANCH}" > "release-4.16" ]]; then
-  # Adjust migrate level for OCP 4.17 and later
+if [[ "${TARGET_BRANCH}" < "release-5.0" && "${TARGET_BRANCH}" > "release-4.16" ]]; then
+  # Adjust migrate level for OCP 4.17 and later up to 5.0
   # See https://github.com/konflux-ci/olm-operator-konflux-sample/blob/main/docs/konflux-onboarding.md#create-the-fbc-in-the-git-repository
   MIGRATE_LEVEL="bundle-object-to-csv-metadata"
 fi
