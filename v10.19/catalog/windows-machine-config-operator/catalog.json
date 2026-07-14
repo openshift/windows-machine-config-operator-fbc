@@ -393,14 +393,6 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:28b265f57feeffde9410f45e217519cfefd8357f3de32c1634cae7c5166e1c71"
-        },
-        {
-            "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:6fae16a77d2f053bd77f69a9684356949e6e0c6f4ad88d86904e85782d03a286"
-        },
-        {
-            "name": "",
             "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:483d5d28098f2263e3f531812c489ec167bc20ebd73acc7d9481304898897082"
         },
         {
