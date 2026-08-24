@@ -112,11 +112,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9d5bdca5f80895a316d7af75e8c5316b0e27ded1dd4b4d4fac01ef1c23b7a6fc"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:e3d896e0f2e6713ad972f733d7424af371a0d75ce6fd0f8b9fadf5ad71c6c22d"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:e3d896e0f2e6713ad972f733d7424af371a0d75ce6fd0f8b9fadf5ad71c6c22d"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9d5bdca5f80895a316d7af75e8c5316b0e27ded1dd4b4d4fac01ef1c23b7a6fc"
         }
     ]
 }
@@ -204,11 +204,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9f7930343361c123d0851af63c5474919c7e37a1e633f72ec5e2ccd28e4976c8"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:ebc850ee0217b0376f20f145b977955fced03af854cddce094be70b29a2a19d7"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:ebc850ee0217b0376f20f145b977955fced03af854cddce094be70b29a2a19d7"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9f7930343361c123d0851af63c5474919c7e37a1e633f72ec5e2ccd28e4976c8"
         }
     ]
 }
