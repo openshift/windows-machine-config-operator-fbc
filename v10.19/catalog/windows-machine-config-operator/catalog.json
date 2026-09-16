@@ -301,11 +301,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:f34a078cf1eda76b54c27714257a6019bf163a6f85a4c22bbafbee572e11762d"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:6fae16a77d2f053bd77f69a9684356949e6e0c6f4ad88d86904e85782d03a286"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:9c875df759e9ea507c2e85f9806d28c80278cf3d7f8535231135b02dc67c85a0"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:28b265f57feeffde9410f45e217519cfefd8357f3de32c1634cae7c5166e1c71"
         }
     ]
 }
@@ -313,7 +313,7 @@
     "schema": "olm.bundle",
     "name": "windows-machine-config-operator.v10.19.3",
     "package": "windows-machine-config-operator",
-    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:0f7f5fc4673309dc320ae6bac46ae563570a73235f032d834946002ab054dbcf",
+    "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:b6559585a2562d6ad8fef99b0b7a599f5e88e8ca58cd0be3a16ba009770e7c64",
     "properties": [
         {
             "type": "olm.package",
@@ -330,7 +330,7 @@
                     "capabilities": "Seamless Upgrades",
                     "categories": "OpenShift Optional",
                     "certified": "false",
-                    "createdAt": "2026-07-13T20:00:34Z",
+                    "createdAt": "2026-09-10T22:14:35Z",
                     "description": "An operator that enables Windows container workloads on OCP",
                     "features.operators.openshift.io/cnf": "false",
                     "features.operators.openshift.io/cni": "true",
@@ -393,11 +393,11 @@
     "relatedImages": [
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:aef2c12e7e8da25b401ef26ccce37c7e18abf347bffb87b531e357f57ce15eb9"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-rhel9-operator@sha256:3b88fad22c2b1d75148e706120752da93c4538a301dc5a14be457db44a38e067"
         },
         {
             "name": "",
-            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:0f7f5fc4673309dc320ae6bac46ae563570a73235f032d834946002ab054dbcf"
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:b6559585a2562d6ad8fef99b0b7a599f5e88e8ca58cd0be3a16ba009770e7c64"
         }
     ]
 }
