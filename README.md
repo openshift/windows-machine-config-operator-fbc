@@ -58,3 +58,19 @@ opm alpha render-template basic v10.19/catalog-template.json --migrate-level=bun
 # Ensure all references in catalog.json point to the same registry.
 # This should be registry.redhat.io for most streams and registry.stage.redhat.io for the stream tracked by the WMCO master branch
 ```
+
+## Promoting a patch release
+
+Use `hack/promote-release.sh` to cut the next patch release from the current staged candidate, before refreshing the bundle for the next candidate.
+
+From the repository root, on your intended change branch with a clean working tree and index, run:
+
+```bash
+./hack/promote-release.sh release-4.22
+```
+
+The script commits the updated catalog template on the current branch. At the optional snapshot prompt, answer `y` only if the next candidate build is ready; otherwise, answer `n`.
+
+If you answer `n`, run `./hack/release-snapshot.sh release-4.22` later when the next candidate is ready.
+
+Review the changes and open a pull request against `main`.
