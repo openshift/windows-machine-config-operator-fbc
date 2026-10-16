@@ -30,6 +30,11 @@
                     "name": "windows-machine-config-operator.v10.19.3",
                     "replaces": "windows-machine-config-operator.v10.19.2",
                     "skipRange": ">=10.18.0 <10.19.3"
+                },
+                {
+                    "name": "windows-machine-config-operator.v10.19.4",
+                    "replaces": "windows-machine-config-operator.v10.19.3",
+                    "skipRange": ">=10.18.0 <10.19.4"
                 }
             ],
             "name": "stable",
@@ -47,6 +52,10 @@
         {
             "schema": "olm.bundle",
             "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:6fae16a77d2f053bd77f69a9684356949e6e0c6f4ad88d86904e85782d03a286"
+        },
+        {
+            "schema": "olm.bundle",
+            "image": "registry.redhat.io/openshift4-wincw/windows-machine-config-operator-bundle@sha256:b6559585a2562d6ad8fef99b0b7a599f5e88e8ca58cd0be3a16ba009770e7c64"
         },
         {
             "schema": "olm.bundle",
